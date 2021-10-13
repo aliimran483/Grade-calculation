@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading System</title>
+</head>
+<style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+
+<body style="text-align: center;">
+    <h1>Simple Grading System</h1>
+    <p style="font-weight: bold; font-size: 14px;">Percentage</p>
+    <input type="number" id="percentage">
+    <br>
+    <br>
+
+
+    <button onclick=" myfunction()">What's my grade</button>
+    <h3 id="result"></h3>
+    <script>
+        function myfunction() {
+            let percentage = document.getElementById("percentage").value;
+            console.log(percentage)
+            percentage = Math.round(percentage);
+            console.log(percentage);
+            var result;
+            switch (true) {
+                case percentage >= 40 && percentage < 50:
+                    document.getElementById("result").innerHTML = "Grade: D";
+                    break;
+                case percentage >= 50 && percentage < 60:
+                    document.getElementById("result").innerHTML = "Grade: C";
+                    break;
+                case percentage >= 60 && percentage < 70:
+                    document.getElementById("result").innerHTML = "Grade: B";
+                    break;
+                case percentage >= 70 && percentage < 80:
+                    document.getElementById("result").innerHTML = "Grade: A";
+                    break;
+                case percentage >= 80 && percentage < 90:
+                    document.getElementById("result").innerHTML = "Grade: A+";
+                    break;
+                case percentage >= 90 && percentage <=100:
+                    document.getElementById("result").innerHTML = "Grade: A++";
+                    break;
+                case percentage >100:
+                    document.getElementById("result").innerHTML = "Inappropirate value";
+                    break;
+                default:
+                    document.getElementById("result").innerHTML = "Fail!"
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
